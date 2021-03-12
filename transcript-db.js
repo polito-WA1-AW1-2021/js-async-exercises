@@ -98,14 +98,14 @@ const main = async () => {
   const myNewExams = [wa1, sec, ds];
 
   // calling some methods -- insert the 3 new exams
-  myNewExams.forEach(async (exam) => {
+  for(const exam of myNewExams) {
     try {
       const result = await examList.add(exam);
       console.log(`'${exam.name}' inserted!`)
     } catch (err) {
       console.error(err);
     }
-  });
+  }
 
   // get all the Exams
   const exams = await examList.getAll();
