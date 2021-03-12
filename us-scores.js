@@ -29,10 +29,10 @@ const usExams = exams.map(({score, ...e}) => ({...e, score: remap(score)}));
 // convert scores to 1-4, to compute GPA
 const usScores = usExams.map(e => e.score);
 // this can be done in a similar way to remap()
-const four = usScores.filter(score => score === 'A').map(score => score = 4);
-const three = usScores.filter(score => score === 'B').map(score => score = 3);
-const two = usScores.filter(score => score === 'C').map(score => score = 2);
-const one = usScores.filter(score => score === 'D').map(score => score = 1);
+const four = usScores.filter(score => score === 'A').map(score => 4);
+const three = usScores.filter(score => score === 'B').map(score => 3);
+const two = usScores.filter(score => score === 'C').map(score => 2);
+const one = usScores.filter(score => score === 'D').map(score => 1);
 
 // compute GPA
 const gpa = [...four, ...three, ...two, ...one].reduce((sum, score) => sum + score, 0)/usScores.length;
